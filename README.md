@@ -1,4 +1,6 @@
+
 # Justanswer JavaScript Style Guide() {
+
 
 *A mostly reasonable approach to JavaScript*
 
@@ -396,7 +398,7 @@ Other Style Guides
         return author === 'Harper Lee';
       } else {
         return false;
-    }
+      }
     });
 
     // good
@@ -531,7 +533,7 @@ Other Style Guides
     // bad
     function sayHi(name) {
       return ['How are you, ', name, '?'].join();
-      }
+    }
 
     // bad
     function sayHi(name) {
@@ -541,7 +543,7 @@ Other Style Guides
     // good
     function sayHi(name) {
       return `How are you, ${name}?`;
-      }
+    }
     ```
 
   <a name="strings--eval"></a><a name="6.5"></a>
@@ -1691,9 +1693,9 @@ Other Style Guides
       constructor() {
         super();
 
-      // FIXME: shouldn't use a global here
-      total = 0;
-    }
+        // FIXME: shouldn't use a global here
+        total = 0;
+      }
     }
     ```
 
@@ -1705,11 +1707,11 @@ Other Style Guides
       constructor() {
         super();
 
-      // TODO: total should be configurable by an options param
-      this.total = 0;
+        // TODO: total should be configurable by an options param
+        this.total = 0;
+      }
     }
-    }
-  ```
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1718,9 +1720,11 @@ Other Style Guides
 
 
   - Use soft tabs set to 4 spaces.
+  <a name="whitespace--spaces"></a><a name="18.1"></a>
+  - [18.1](#whitespace--spaces) Use soft tabs set to 4 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
-    // bad
+    // good
     function foo() {
     ∙∙∙∙const name;
     }
@@ -1730,7 +1734,7 @@ Other Style Guides
     ∙const name;
     }
 
-    // good
+    // bad
     function baz() {
     ∙∙const name;
     }
@@ -1850,7 +1854,7 @@ Other Style Guides
 
     // bad
     const leds = stage.selectAll('.led').data(data).enter().append('svg:svg').classed('led', true)
-        .attr('width',  (radius + margin) * 2).append('svg:g')
+        .attr('width', (radius + margin) * 2).append('svg:g')
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
@@ -1859,7 +1863,7 @@ Other Style Guides
         .data(data)
       .enter().append('svg:svg')
         .classed('led', true)
-        .attr('width',  (radius + margin) * 2)
+        .attr('width', (radius + margin) * 2)
       .append('svg:g')
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
@@ -2159,7 +2163,7 @@ Other Style Guides
   - [21.2](#coercion--strings)  Strings:
 
     ```javascript
-    //  => this.reviewScore = 9;
+    // => this.reviewScore = 9;
 
     // bad
     const totalScore = this.reviewScore + ''; // invokes this.reviewScore.valueOf()
@@ -2284,8 +2288,8 @@ Other Style Guides
     // good
     class User {
       constructor(options) {
-      this.name = options.name;
-    }
+        this.name = options.name;
+      }
     }
 
     const good = new User({
@@ -2424,17 +2428,17 @@ Other Style Guides
     class Jedi {
       constructor(options = {}) {
         const lightsaber = options.lightsaber || 'blue';
-      this.set('lightsaber', lightsaber);
-    }
+        this.set('lightsaber', lightsaber);
+      }
 
       set(key, val) {
-      this[key] = val;
+        this[key] = val;
       }
 
       get(key) {
-      return this[key];
-    }
+        return this[key];
       }
+    }
     ```
 
 **[⬆ back to top](#table-of-contents)**
